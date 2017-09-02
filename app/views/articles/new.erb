@@ -1,3 +1,22 @@
 <div class="container">
-	<h1>Registrar Articulo</h1>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Registrar Articulo</h1>
+      <br>
+      <form action="/articles" method="POST">
+        <div class="form-group">
+            <input type="input" name="image_url" class="form-control input-lg" placeholder="Imagen">
+        </div>
+        <div class="form-group">
+          <input type="input" name="code" class="form-control input-lg" placeholder="Codigo">
+        </div>
+        <div class="form-group">
+          <textarea name="description" class="form-control input-lg" placeholder="Descripcion"></textarea>
+        </div>
+        <input type="submit" name="Crear Articulo" class="btn btn-success btn-lg btn-block">
+        <a href="/" class="btn btn-warning btn-lg btn-block">Volver</a>
+      </form>
+      <br>
+    </div>
+  </div>
 </div>
