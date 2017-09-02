@@ -1,0 +1,34 @@
+<div class="container">
+	<br>
+	<br>
+	<h1>Mis Articulos</h1>
+	<br>
+	<br>
+	<a href="/new/article" class="btn btn-success">Crear Articulo</a>
+	<br>
+	<br>
+	<table class="table table-hover">
+		<tr>
+			<th class="text-center">Imagen</th>
+			<th class="text-center">Codigo</th>
+			<th class="text-center">Descripcion</th>
+			<th class="text-center">Fecha Creado</th>
+			<th class="text-center">Unidades</th>
+		</tr>
+		<% @articles["articles"].each do |article| %>
+			<tr>
+				<td class="text-center"><img src="<%= article["image_url"] %>" width=100></td>
+				<td class="text-center"><%= article["code"] %></td>
+				<td class="text-center"><%= article["description"] %></td>
+				<td class="text-center"><%= article["created_at"] %></td>
+				<td class="text-center"><%= @total["total_articles"] %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+
+
+	
+
+
