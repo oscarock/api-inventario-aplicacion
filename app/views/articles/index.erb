@@ -9,6 +9,7 @@
 	<br>
 	<table class="table table-hover">
 		<tr>
+			<th class="text-center">ID</th>
 			<th class="text-center">Imagen</th>
 			<th class="text-center">Codigo</th>
 			<th class="text-center">Descripcion</th>
@@ -17,11 +18,12 @@
 		</tr>
 		<% @articles["articles"].each do |article| %>
 			<tr>
+				<td class="text-center"><%= article["id"] %></td>
 				<td class="text-center"><img src="<%= article["image_url"] %>" width=100></td>
 				<td class="text-center"><%= article["code"] %></td>
 				<td class="text-center"><%= article["description"] %></td>
 				<td class="text-center"><%= article["created_at"] %></td>
-				<td class="text-center"><%= @total["total_articles"] %></td>
+				<td class="text-center"><%= total_articles(article["id"])["total_articles"] %></td>
 			</tr>
 		<% end %>
 	</table>
