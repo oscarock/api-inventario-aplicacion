@@ -22,5 +22,10 @@ patch "/article/:id" do
 	redirect "/"
 end
 
+delete "/delete/article/:id" do
+	@article = HTTParty.delete("http://localhost:3000/api/v1/articles/#{params[:id]}", headers: {"Authorization" => "Token token=\"GNwqAsap2omwigQyuLQQnToG\""})
+	redirect "/"
+end	
+
 
  

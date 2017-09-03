@@ -26,7 +26,14 @@
 				<td class="text-center"><%= article["created_at"] %></td>
 				<td class="text-center"><%= total_articles(article["id"])["total_articles"] %></td>
 				<td class="text-center">
-					<a href="edit/article/<%= article["id"] %>">Editar</a>
+					<a href="edit/article/<%= article["id"] %>" class="btn btn-primary">Editar</a>
+					<form onsubmit="confirm('Estas seguro de borrar el articulo?')" action="delete/article/<%= article["id"] %>" method="POST">
+					<br>
+					<br>
+    					<input type="hidden" name="_method" value="DELETE">
+    					<button class="btn btn-danger" type="submit">Delete</button>
+  					</form>
+					<!-- <a href="delete/article/<%# article["id"] %>" class="btn btn-danger">Eliminar</a> -->
 				</td>
 			</tr>
 		<% end %>
