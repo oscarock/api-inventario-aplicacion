@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Editar Movimiento</h1>
+      <br>
+      <form action="/movement/<%= @movement["movement"]["id"] %>" method="POST">
+        <div class="form-group">
+            <select class="form-control input-lg" name="movement_type_id">
+              <option value="3">Entrada</option>
+              <option value="4">Salida</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control input-lg" name="article_id">
+            <% @articles["articles"].each do |article| %>
+                <option value="<%= article["id"] %>"><%= article["description"] %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="input" name="amount" class="form-control input-lg" placeholder="Cantidad" value="<%= @movement["movement"]["amount"] %>">
+        </div>
+        <input type="submit" name="Crear Articulo" class="btn btn-success btn-lg btn-block">
+        <a href="/movements" class="btn btn-warning btn-lg btn-block">Volver</a>
+      </form>
+      <br>
+    </div>
+  </div>
+</div>
