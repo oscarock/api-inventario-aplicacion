@@ -1,0 +1,38 @@
+<div class="container">
+	<br>
+	<br>
+	<h1>Mis Movimientos</h1>
+	<br>
+	<br>
+	<a href="/new/movement" class="btn btn-success">Crear Movimiento</a>
+	<br>
+	<br>
+	<table class="table table-hover">
+		<tr>
+			<th class="text-center">ID</th>
+			<th class="text-center">Tipo de Movimiento</th>
+			<th class="text-center">ID Articulo</th>
+			<th class="text-center">Cantidad</th>
+			<th class="text-center">Fecha Creado</th>
+			<th class="text-center">Acciones</th>
+		</tr>
+		<% @movements["movements"].each do |movement| %>
+			<tr>
+				<td class="text-center"><%= movement["id"] %></td>
+				<td class="text-center"><%= (movement["movement_type_id"] == 3) ? "Entrada" : "Salida" %></td>
+				<td class="text-center"><%= movement["article_id"] %></td>
+				<td class="text-center"><%= movement["amount"] %></td>
+				<td class="text-center"><%= movement["created_at"] %></td>
+				<td class="text-center">
+					<a href="edit/movement/<%= movement["id"] %>" class="btn btn-primary">Editar</a>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+
+
+	
+
+
