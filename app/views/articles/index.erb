@@ -15,6 +15,7 @@
 			<th class="text-center">Descripcion</th>
 			<th class="text-center">Fecha Creado</th>
 			<th class="text-center">Unidades</th>
+			<th class="text-center">Acciones</th>
 		</tr>
 		<% @articles["articles"].each do |article| %>
 			<tr>
@@ -24,6 +25,9 @@
 				<td class="text-center"><%= article["description"] %></td>
 				<td class="text-center"><%= article["created_at"] %></td>
 				<td class="text-center"><%= total_articles(article["id"])["total_articles"] %></td>
+				<td class="text-center">
+					<a href="edit/article/<%= article["id"] %>">Editar</a>
+				</td>
 			</tr>
 		<% end %>
 	</table>
