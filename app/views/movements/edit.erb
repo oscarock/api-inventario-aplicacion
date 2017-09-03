@@ -4,6 +4,7 @@
       <h1 class="text-center">Editar Movimiento</h1>
       <br>
       <form action="/movement/<%= @movement["movement"]["id"] %>" method="POST">
+        <input type="hidden" name='_method' value="PATCH">
         <div class="form-group">
             <select class="form-control input-lg" name="movement_type_id">
               <option value="3">Entrada</option>
